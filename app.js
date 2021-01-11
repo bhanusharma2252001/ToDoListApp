@@ -84,7 +84,7 @@ item.save();
 res.redirect("/");
 }
 else{
-  List.findOne({name:listName},(err,Founditems)=>
+  List.findOne({name:listName},(err,Founditems)=> 
   {
     Founditems.listItems.push(item);
     Founditems.save();
@@ -154,11 +154,6 @@ List.findOne({name:customeListName},(err,foundList)=>
 app.get("/about", function(req, res){
   res.render("about");
 });
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
 
 app.listen(process.env.PORT||3000,()=>
 {
